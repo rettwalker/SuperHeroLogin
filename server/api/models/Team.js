@@ -11,7 +11,12 @@ module.exports = {
     name:{
       type:'string',
       required:true
-    }
+    },
+    members:{
+      collection:'User',
+      via:'Teams'
+    },
+    includeIn: { list: "index", detail: "record"}
 
   }
 };

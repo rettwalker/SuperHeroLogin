@@ -11,8 +11,12 @@ module.exports = {
   attributes: require('waterlock').models.user.attributes({
     name:{
       type:'string',
-      
-    }
+    },
+    Teams:{
+      collection:'Team',
+      via:'members'
+    },
+    includeIn: { list: "index", detail: "record"}
     /* e.g.
     nickname: 'string'
     */
