@@ -6,7 +6,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('superhero');
+  this.route('superheros', function() {
+    this.route('superhero',{path:'/:id'});
+    this.route('new');
+  });
+
 });
 
 export default Router;

@@ -16,7 +16,19 @@ module.exports = {
       collection:'Team',
       via:'members'
     },
-    includeIn: { list: "index", detail: "record"}
+    firstName:{
+      type:'string'
+    },
+    lastName:{
+      type:'string'
+    },
+    photo:{
+      type:'string'
+    },
+    descrip:{
+      type:'string'
+    },
+    includeIn: { list: "link", detail: "record"}
     /* e.g.
     nickname: 'string'
     */
