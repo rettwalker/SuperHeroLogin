@@ -9,7 +9,8 @@
         {{else}}
           <h3>Where have all the superheros gone?</h3>
         {{/each}}
-
+      <hr>
+      {{#link-to "superheros.new" class="btn btn-default"}}New Hero{{/link-to}}
     </div>
     <div class="col-xs-9">
       {{outlet}}
