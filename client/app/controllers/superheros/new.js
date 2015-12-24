@@ -8,6 +8,7 @@ export default Ember.Controller.extend({
         firstName:this.firstName,
         lastName:this.lastName
       }).save();
+      this.transitionToRoute('superheros');
     }
   },
 });

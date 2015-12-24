@@ -2,15 +2,15 @@
   <form {{action "addNewHero" on="submit"}} class="form-horizontal">
     <div class="form-group">
       <label class="col-xs-2">Secret Identity</label>
-      {{input value=name class="col-xs-4"}}
+      {{input type="text" value=name class="col-xs-4"}}
     </div>
     <div class="form-group">
       <label class="col-xs-2">First Name</label>
-      {{input value=firstName class="col-xs-4"}}
+      {{input type="text" value=firstName class="col-xs-4"}}
     </div>
     <div class="form-group">
       <label class="col-xs-2">Last Name</label>
-      {{input value=lastName class="col-xs-4"}}
+      {{input type="text" value=lastName class="col-xs-4"}}
     </div>
     <button class="btn btn-primary" type="submit">Save</button>
   </form>
