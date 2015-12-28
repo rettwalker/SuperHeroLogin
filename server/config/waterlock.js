@@ -75,7 +75,7 @@ module.exports.waterlock = {
 
     // set the name of the jwt token property
     // in the JSON response
-    tokenProperty: 'token',
+    tokenProperty: 'access_token',
 
     // set the name of the expires property
     // in the JSON response

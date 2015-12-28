@@ -14,7 +14,11 @@
     <div class="collapse navbar-collapse" id="menu-collapse">
       <ul class="nav navbar-nav">
         <li>{{#link-to "superheros"}}Superheros{{/link-to}}</li>
-        <li></li>
+        <li>{{#if session.isAuthenticated}}
+          <a {{action 'invalidateSession'}}>Logout</a>
+          {{else}}
+          {{#link-to 'login'}}Login{{/link-to}}
+          {{/if}}</li>
       </ul>
     </div>
   </div>

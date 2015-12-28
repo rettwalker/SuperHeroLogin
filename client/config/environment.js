@@ -21,12 +21,25 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
     }
   };
+  ENV['ember-simple-auth'] = {
+   authorizer: 'authorizer:token',
+   crossOriginWhitelist: ['http://localhost:1337'],
+
+ };
+ ENV['ember-simple-auth-token'] = {
+   serverTokenEndpoint: 'http://localhost:1337/api/v1/auths/login',
+   identificationField: 'email',
+   passwordField: 'password',
+   refreshAccessTokens: true,
+   timeFactor: 1,
+   refreshLeeway: 300, // Refresh the token 5 minutes (300s) before it expires.
+   tokenPropertyName: 'access_token',
+ };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
