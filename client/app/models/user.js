@@ -7,5 +7,7 @@ export default DS.Model.extend({
   descrip:DS.attr(),
   photo:DS.attr(),
   Teams:DS.hasMany('team'),
+  email:DS.attr(),
+
 
 });

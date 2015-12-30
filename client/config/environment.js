@@ -35,10 +35,12 @@ module.exports = function(environment) {
    serverTokenEndpoint: 'http://localhost:1337/api/v1/auths/login',
    identificationField: 'email',
    passwordField: 'password',
+   tokenPropertyName: 'access_token',
+   tokenExpireName: 'expires',
    refreshAccessTokens: true,
    timeFactor: 1,
    refreshLeeway: 300, // Refresh the token 5 minutes (300s) before it expires.
-   tokenPropertyName: 'access_token',
+   serverTokenRefreshEndpoint: 'http://localhost:1337/api/v1/users/jwt',
  };
 
   if (environment === 'development') {

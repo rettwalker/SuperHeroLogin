@@ -9,14 +9,11 @@ export default Ember.Component.extend({
     authenticate: function() {
       var credentials = this.getProperties('identification', 'password'),
         authenticator = 'authenticator:jwt';
-
-      this.get('session').authenticate(authenticator, credentials).catch((reason) => {
-        console.log(reason.error);
-        if (reason.error === 'User not found') {
-          //alert('User Not Found');
-          this.get('router').transitionTo('register');
-        }
+        var _this = this;
+      this.get('session').authenticate(authenticator, credentials).then(function(){
+        _this.get('router').transitionTo('/dashboard');
       });
+
 
 
     }

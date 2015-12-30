@@ -10,12 +10,14 @@
  * @docs        :: http://waterlock.ninja/documentation
  */
 module.exports = function(req, res, next) {
+  if(req.headers['authorization'] == null){
+    return res.forbidden('no authorization, no admit');
+  }
   var authHeader = req.headers['authorization'];
     if (authHeader.substring(0,7) !== 'Bearer ') return res.forbidden('Authorization token not included in header');
 
     req.headers['access_token'] = authHeader.substring(7);
-  waterlock.validator.validateTokenRequest(req, function(err, user){
-    console.log(user.id);
+    waterlock.validator.validateTokenRequest(req, function(err, user){
 
     if(err){
       return res.forbidden(err);

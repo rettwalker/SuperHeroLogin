@@ -58,10 +58,10 @@ module.exports.waterlock = {
     // CHANGE THIS SECRET
     secret: 'this is my secret',
     expiry:{
-      unit: 'days',
-      length: '7'
+      unit: 'minutes',
+      length: '10'
     },
-    audience: 'app name',
+    audience: 'user',
     subject: 'subject',
 
     // tracks jwt usage if set to true
@@ -145,7 +145,7 @@ module.exports.waterlock = {
      // obj - {controller: 'blog', action: 'post'}
      // string - 'custom json response string'
      // default - 'default'
-     success: 'default',
+     success: 'jwt',
      // This can be any one of the following
      //
      // url - 'http://example.com'

@@ -28,13 +28,17 @@ module.exports = {
     descrip:{
       type:'string'
     },
-    includeIn: { list: "link", detail: "record"}
-    /* e.g.
-    nickname: 'string'
-    */
-
+    includeIn: { list: "index", detail: "record"},
+    toJSON: function() {
+      var obj = this.toObject();
+      delete obj.password;
+      delete obj.attempts;
+      delete obj.jsonWebTokens;
+      delete obj.auth;
+      return obj;
+    }
   }),
 
   beforeCreate: require('waterlock').models.user.beforeCreate,
-  beforeUpdate: require('waterlock').models.user.beforeUpdate
+  beforeUpdate: require('waterlock').models.user.beforeUpdate,
 };

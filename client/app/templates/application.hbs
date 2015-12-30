@@ -19,6 +19,9 @@
           {{else}}
           {{#link-to 'login'}}Login{{/link-to}}
           {{/if}}</li>
+          <li>{{#if session.isAuthenticated}}
+            <p class="navbar-text">{{session.currentUser.id}}</p>
+            {{/if}}</li>
       </ul>
     </div>
   </div>

@@ -26,7 +26,7 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-   '*': ['checkHeader','hasJsonWebToken']
+   '*': ['checkHeader'],
 
   /***************************************************************************
   *                                                                          *
@@ -34,6 +34,10 @@ module.exports.policies = {
   * and its actions                                                          *
   *                                                                          *
   ***************************************************************************/
+
+  AuthController:{
+    login:['checkHeader','userExists']
+  }
 	// RabbitController: {
 
 		// Apply the `false` policy as the default for all of RabbitController's actions
