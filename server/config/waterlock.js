@@ -8,12 +8,14 @@
  * http://waterlock.ninja/documentation
  */
 module.exports.waterlock = {
+  pluralizeEndpoints: true,
+
 
   // Base URL
   //
   // used by auth methods for callback URI's using oauth and for password
   // reset links.
-  baseUrl: 'http://localhost:1337',
+  baseUrl: 'http://localhost:1337/',
 
   // Auth Method(s)
   //
@@ -45,6 +47,22 @@ module.exports.waterlock = {
         }
       },
       createOnNotFound: true
+    },
+    {
+      name: 'waterlock-google-auth',
+      clientId: '...',
+      clientSecret: '...',
+      redirectUri: 'http://localhost:4200/login',
+      fieldMap: {
+            // <model-field>: <google-field>,
+            'email': 'googleEmail'
+        }
+    },
+    {
+        name: "waterlock-facebook-auth",
+        appId: "...",
+        appSecret: "...",
+        redirectUri: 'http://localhost:4200'
     }
   ],
 

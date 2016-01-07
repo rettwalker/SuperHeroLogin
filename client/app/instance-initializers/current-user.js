@@ -1,3 +1,4 @@
+//it works through the site but on page reload
 export function initialize(/* appInstance */) {
   // appInstance.registry.injection('route', 'foo', 'service:foo');
 }
@@ -10,15 +11,16 @@ export default {
   initialize: function(container) {
     Session.reopen({
       setCurrentUser: function() {
+        var _this = this;
         if (this.get('isAuthenticated')) {
+          console.log(this.get('session.authenticated'));
           container.lookup("service:store").findRecord('user', this.get('session.authenticated.user.id'))
-          //container.lookup("service:store").queryRecord('user', {})
           .then((user) => {
             this.set('currentUser', user);
+            console.log(this.get('session.currentUser'));
           });
         }
       }.observes('isAuthenticated')
-
     });
   }
 };

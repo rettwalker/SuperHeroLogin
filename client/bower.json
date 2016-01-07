@@ -10,7 +10,8 @@
     "jquery": "^1.11.3",
     "loader.js": "^3.5.0",
     "qunit": "~1.20.0",
-    "bootstrap": "~3.3.6"
+    "bootstrap": "~3.3.6",
+    "ember-simple-auth": "0.8.0"
   },
   "resolutions": {
     "ember": "2.2.0"

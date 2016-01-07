@@ -4,17 +4,31 @@ module.exports = function(environment) {
   var ENV = {
     contentSecurityPolicy: {
     'default-src': "'none'",
-    'script-src': "'self'",
+    'script-src': "'self' connect.facebook.net graph.facebook.com",
     'font-src': "'self'",
     'connect-src': "'self' *",
-    'img-src': "'self'",
+    'img-src': "'self' www.facebook.com",
     'style-src': "'self' 'unsafe-inline' *",
-    'media-src': "'self'"
+    'media-src': "'self'",
+    'frame-src': "'self' staticxx.facebook.com www.facebook.com"
   },
     modulePrefix: 'client',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    torii: {
+			sessionServiceName: 'session',
+			providers: {
+				'google-oauth2': {
+					apiKey: '...',
+					redirectUri: 'http://localhost:4200/login'
+				},
+				'facebook-oauth2': {
+					apiKey: '...',
+          redirectUri:'http://localhost:4200/'
+				}
+			}
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

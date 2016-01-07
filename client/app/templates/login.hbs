@@ -1,6 +1,8 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3">
+      <button {{action 'authenticateGoogle'}} class="btn btn-social google_oauth2">with Google</button>
+      <button {{action 'authenticateFacebook'}} class="btn btn-social facebook_oauth2">with Facebook</button>
       {{login-form}}
     </div>
   </div>

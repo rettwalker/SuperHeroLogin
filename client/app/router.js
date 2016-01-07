@@ -8,7 +8,6 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('superheros', function() {
     this.route('superhero',{path:'/:name'});
-    this.route('new');
   });
 
   this.route('login');
