@@ -62,7 +62,11 @@ module.exports.waterlock = {
         name: "waterlock-facebook-auth",
         appId: "...",
         appSecret: "...",
-        redirectUri: 'http://localhost:4200'
+    },
+    {
+        name: "waterlock-twitter-auth",
+        consumerKey: '...',
+        consumerSecret: '...'
     }
   ],
 

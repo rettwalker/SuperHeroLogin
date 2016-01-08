@@ -22,6 +22,7 @@
           <li>{{#if session.isAuthenticated}}
             <p class="navbar-text">{{session.currentUser.id}}</p>
             {{/if}}</li>
+            <li><button class="navbar-text" {{action 'sayHello'}}>Hi there!</button></li>
       </ul>
     </div>
   </div>

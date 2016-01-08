@@ -25,7 +25,6 @@ module.exports = function(environment) {
 				},
 				'facebook-oauth2': {
 					apiKey: '...',
-          redirectUri:'http://localhost:4200/'
 				}
 			}
     },
