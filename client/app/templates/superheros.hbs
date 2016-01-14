@@ -1,17 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-3">
-      <h3> Super Heros</h3>
-      <hr>
-
-        {{#each model as |user|}}
-          {{superhero-info user=user}}
-        {{else}}
-          <h3>Where have all the superheros gone?</h3>
-        {{/each}}
-      <hr>
+    <div class="col-xs-12 col-sm-3">
+      {{#each model as |user|}}
+      <p>{{#link-to 'superheros.heroInfo' user.id}}{{user.name}}{{/link-to}}</p>
+      {{else}}
+        No Teams in Database
+      {{/each}}
     </div>
-    <div class="col-xs-9">
+    <div class="col-xs-12 col-sm-9">
       {{outlet}}
     </div>
   </div>

@@ -2,10 +2,13 @@
   <div class="row">
     <div class="col-xs-12 col-sm-5">
       {{#each model as |team|}}
-        <p>{{team.name}}</p>
+      <p>{{#link-to 'teams.team-info' team.id}}{{team.name}}{{/link-to}}</p>
       {{else}}
         No Teams in Database
       {{/each}}
+    </div>
+    <div class="col-xs-12 col-sm-7">
+      {{outlet}}
     </div>
   </div>
 </div>

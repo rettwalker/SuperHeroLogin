@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-6">
+    <h5>Team Name</h5>
+    {{model.name}}
+  </div>
+  <div class="col-xs-12 col-sm-6">
+    <h5>Members</h5>
+    {{#each model.members as |user|}}
+      <p>{{#link-to 'superheros.heroInfo' user.id}}{{user.name}}{{/link-to}}</p>
+    {{/each}}
+  </div>
+</div>

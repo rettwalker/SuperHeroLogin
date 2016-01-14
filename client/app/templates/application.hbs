@@ -15,6 +15,7 @@
 
     <div class="collapse navbar-collapse" id="menu-collapse">
       <ul class="nav navbar-right navbar-nav">
+        <li>{{#link-to 'superheros'}}Heros{{/link-to}}</li>
         <li>{{#link-to 'teams'}}Teams{{/link-to}}</li>
         {{#if session.isAuthenticated}}
           <li class="dropdown">

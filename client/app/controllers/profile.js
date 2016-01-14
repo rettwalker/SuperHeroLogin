@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
 
   actions:{
     addNewHero(){
-      console.log(this.get('session.currentUser.id'));
+      //console.log(this.get('session.currentUser.id'));
       let user = this.store.peekRecord('user',this.get('session.currentUser.id'));
       user.set('name',this.name);
       user.set('firstName',this.firstName);
@@ -16,18 +16,18 @@ export default Ember.Controller.extend({
       this.transitionToRoute('/'+user.id );
     },
     addTeam(id){
-      //let user = this.store.peekRecord('user',this.get('session.currentUser.id'));
       let team = this.store.peekRecord('team',id);
-      team.get('members').pushObject(this.get('session.currentUser'));
-      team.save();
+      let user = this.store.peekRecord('user',this.get('session.currentUser.id'));
+      user.get('Teams').pushObject(team);
+      user.save();
       alert("New Team Added");
 
     },
     removeTeam(id){
-      //let user = this.store.peekRecord('user',this.get('session.currentUser.id'));
       let team = this.store.peekRecord('team',id);
-      team.get('members').removeObject(this.get('session.currentUser'));
-      team.save();
+      let user = this.store.peekRecord('user',this.get('session.currentUser.id'));
+      user.get('Teams').removeObject(team);
+      user.save();
       alert("Team Removed");
 
 
