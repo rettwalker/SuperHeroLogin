@@ -1,7 +1,18 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row">
-    <div class="col-xs-6 col-xs-offset-3">
-      <h2>Welcome to Superhero Land</h2>
+    <div class="col-xs-9">
+      <h2 class="text-center">Welcome to Superhero Land</h2>
+    </div>
+    <div class="col-xs-3">
+      <h3> Super Heros</h3>
+      <hr>
+
+        {{#each model as |user|}}
+          {{superhero-info user=user}}
+        {{else}}
+          <h3>Where have all the superheros gone?</h3>
+        {{/each}}
+      <hr>
     </div>
   </div>
 </div>

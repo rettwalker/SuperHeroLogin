@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-5">
+      {{#each model as |team|}}
+        <p>{{team.name}}</p>
+      {{else}}
+        No Teams in Database
+      {{/each}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <img src="/assests/images/userPlaceholder.png" class="img-responsive center-block" alt="Responsive image">
+    </div>
+    <div class="col-xs-12 col-sm-4 text-center">
+
+        <h5>Secret Identity: {{model.name}}</h5>
+        <br>
+        <h5> First Name:
+          {{#if model.firstName}}
+            {{model.firstName}}
+            {{else}}
+            N/A
+          {{/if}}
+        </h5>
+        <br>
+        <h5> Last Name:
+          {{#if model.lastName}}
+            {{model.lastName}}
+          {{else}}
+            N/A
+          {{/if}}
+        </h5>
+        <br>
+        <h5> Desription:
+          {{#if model.descrip}}
+            {{model.descrip}}
+          {{else}}
+            N/A
+          {{/if}}
+        </h5>
+    </div>
+    <div class="text-center col-xs-12 col-sm-4">
+      <h5>Teams</h5>
+      {{#each model.Teams as |team|}}
+        <p>{{team.name}}</p>
+      {{else}}
+        <p> Not apart of a team </p>
+      {{/each}}
+    </div>
+  </div>
+</div>

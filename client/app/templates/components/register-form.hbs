@@ -7,5 +7,8 @@
     <label class="col-xs-4">Password</label>
     {{input type="password" value=password class="col-xs-6"}}
   </div>
-  <button class='btn btn-primary' type='submit'>Save</button>
+  <a {{action 'authenticateGoogle'}} class="col-xs-6 btn btn-social btn-google">{{fa-icon "fa-google-plus"}} Sign in with Google</a>
+  <a {{action 'authenticateFacebook'}} class="col-xs-6 btn btn-social btn-facebook">{{fa-icon "fa-facebook-square"}} Sign in with Facebook</a>
+  <br>
+  <button class='btn btn-primary col-xs-6 col-xs-offset-3' type='submit'>Save</button>
 </form>

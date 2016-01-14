@@ -16,7 +16,7 @@ module.exports = {
       collection:'User',
       via:'Teams'
     },
-    includeIn: { list: "index", detail: "record"}
+    includeIn: { list: "record", detail: "record"}
 
   }
 };

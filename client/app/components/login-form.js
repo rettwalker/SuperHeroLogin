@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   session: Ember.inject.service('session'),
+  torii: Ember.inject.service(),
 
 
   actions: {
@@ -16,6 +17,12 @@ export default Ember.Component.extend({
         }
       });
     },
+    authenticateGoogle(){
+      this.get('session').authenticate('authenticator:google-auth', 'google-oauth2');
+    },
+    authenticateFacebook(){
+      this.get('session').authenticate('authenticator:facebook-auth', 'facebook-oauth2');
+    }
 
 
 

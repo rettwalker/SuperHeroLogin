@@ -14,11 +14,10 @@ export default {
         var _this = this;
         if (this.get('isAuthenticated')) {
           console.log(this.get('session.authenticated'));
-          //container.lookup("service:store").findRecord('user', this.get('session.authenticated.user.id'))
-          //.then((user) => {
-          //  this.set('currentUser', user);
-          //  console.log(this.get('session.currentUser'));
-          //});
+          container.lookup("service:store").findRecord('user', this.get('session.authenticated.user.id'))
+          .then((user) => {
+            this.set('currentUser', user);
+          });
         }
       }.observes('isAuthenticated')
     });

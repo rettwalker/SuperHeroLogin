@@ -16,7 +16,6 @@ export default ToriiAuthenticator.extend({
   			return new Ember.RSVP.Promise((resolve, reject) => {
   				return this._super(provider, options)
   					.then((authResponse) => {
-
   						Ember.run(() => {
                 console.log('Did we make it here?');
                 var _this = this;
@@ -26,9 +25,8 @@ export default ToriiAuthenticator.extend({
                   data: { 'code': authorizationCode },
                   dataType: 'json',
                   success: function(stAuthResponse) {
-                    console.log('did it work?');
-                    Ember.merge(authResponse, stAuthResponse);
-                    _this._resolveWith(provider, authResponse, resolve);
+                    console.log(stAuthResponse);
+                    _this._resolveWith(provider, stAuthResponse, resolve);
                   },
                   error: function(response){
                     console.log(response);
@@ -38,14 +36,6 @@ export default ToriiAuthenticator.extend({
   					});
   			});
   		},
-  		invalidate() {
-  			return new Ember.RSVP.Promise((resolve, reject) => {
-  				this.torii.close(this.provider)
-  					.then(() => {
-  						delete this.provider;
-  						resolve();
-  					}, reject);
-  	  });
-  	}
+
   }
 )

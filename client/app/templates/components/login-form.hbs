@@ -1,10 +1,14 @@
-<form {{action 'authenticate' on='submit'}}>
-  <label for="email">Login</label>
-  {{input placeholder='Enter Email' value=identification}}
-  <label for="password">Password</label>
-  {{input placeholder='Enter Password' type='password' value=password}}
-  <button type="submit">Login</button>
-  {{#if errorMessage}}
-    <p>{{errorMessage}}</p>
-  {{/if}}
+<form {{action 'authenticate' on='submit'}} class="form-horizontal">
+  <div class="form-group">
+    <label class="col-xs-4">Email</label>
+    {{input type="text" value=identification class="col-xs-6"}}
+  </div>
+  <div class="form-group">
+    <label class="col-xs-4">Password</label>
+    {{input type="password" value=password class="col-xs-6"}}
+  </div>
+  <a {{action 'authenticateGoogle'}} class="col-xs-6 btn btn-social btn-google">{{fa-icon "fa-google-plus"}} Sign in with Google</a>
+  <a {{action 'authenticateFacebook'}} class="col-xs-6 btn btn-social btn-facebook">{{fa-icon "fa-facebook-square"}} Sign in with Facebook</a>
+  <br>
+  <button class='btn btn-primary col-xs-6 col-xs-offset-3' type='submit'>Save</button>
 </form>

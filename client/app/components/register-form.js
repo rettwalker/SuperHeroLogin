@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   session: Ember.inject.service('session'),
-  //authCheck: Ember.inject.service('auth-check'),
 
 
   actions: {
@@ -11,12 +10,20 @@ export default Ember.Component.extend({
         authenticator = 'authenticator:jwt';
         var _this = this;
       this.get('session').authenticate(authenticator, credentials).then(function(){
-        _this.get('router').transitionTo('/dashboard');
+        _this.transitionToRoute('/profile');
       });
-
-
-
+    },
+    authenticateGoogle(){
+      var _this = this;
+      this.get('session').authenticate('authenticator:google-auth', 'google-oauth2').then(function () {
+        _this.transitionToRoute('/profile');
+      });
+    },
+    authenticateFacebook(){
+      var _this = this;
+      this.get('session').authenticate('authenticator:facebook-auth', 'facebook-oauth2').then(function () {
+        _this.transitionToRoute('/profile');
+      });
     }
-
   }
 });

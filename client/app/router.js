@@ -6,13 +6,13 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('superheros', function() {
-    this.route('superhero',{path:'/:name'});
-  });
-
   this.route('login');
   this.route('register');
   this.route('logout');
+  this.route('heroInfo',{path:'/:id'});
+  this.route('mission');
+  this.route('profile',{path:'/profile/:id'});
+  this.route('teams');
   this.route('dashboard');
 });
 
