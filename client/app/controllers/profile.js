@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
       user.set('lastName',this.lastName);
       user.set('descrip',this.descrip);
       user.save();
-      this.transitionToRoute('/'+user.id );
+      this.transitionToRoute('/superheros/'+user.id );
     },
     addTeam(id){
       let team = this.store.peekRecord('team',id);

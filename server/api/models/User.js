@@ -28,7 +28,7 @@ module.exports = {
     descrip:{
       type:'string'
     },
-    includeIn: { list: "index", detail: "record"},
+    includeIn: { list: "record", detail: "record"},
     toJSON: function() {
       var obj = this.toObject();
       delete obj.password;

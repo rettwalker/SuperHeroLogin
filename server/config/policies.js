@@ -37,6 +37,9 @@ module.exports.policies = {
 
   AuthController:{
     login:['checkHeader','userExists']
+  },
+  UserController:{
+    update:'hasJsonWebToken'
   }
 	// RabbitController: {
 
