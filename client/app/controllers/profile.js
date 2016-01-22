@@ -1,7 +1,11 @@
 import Ember from 'ember';
+import EmberUploader from 'ember-uploader';
+
 
 export default Ember.Controller.extend({
   session: Ember.inject.service('session'),
+  imgFile:null,
+
 
 
   actions:{
@@ -29,8 +33,27 @@ export default Ember.Controller.extend({
       user.get('Teams').removeObject(team);
       user.save();
       alert("Team Removed");
+    },
+    fileLoaded(file) {
+      this.imgFile=file;
+
+      console.log(file);
+    },
+    displayImage(){
+      console.log(this.imgFile);
+      let files = {};
+      files[0]=this.imgFile;
+      var uploadUrl = 'http://localhost:1337/api/v1/users/uploadImage';
+
+      var uploader = EmberUploader.Uploader.create({
+        url: uploadUrl
+      });
+      if (!Ember.isEmpty(files)) {
+        uploader.upload(files[0]);
+      }
 
 
     }
+
   },
 });

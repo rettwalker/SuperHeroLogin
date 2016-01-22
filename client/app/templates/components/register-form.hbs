@@ -1,4 +1,4 @@
-<form {{action 'authenticate' on='submit'}} class="form-horizontal">
+<form {{action 'registerUser' on='submit'}} class="form-horizontal">
   <div class="form-group">
     <label class="col-xs-4">Email</label>
     {{input type="text" value=identification class="col-xs-6"}}
@@ -6,6 +6,22 @@
   <div class="form-group">
     <label class="col-xs-4">Password</label>
     {{input type="password" value=password class="col-xs-6"}}
+  </div>
+  <div class="form-group">
+    <label class="col-xs-4">Superhero Name</label>
+    {{input type="text" value=name class="col-xs-6"}}
+  </div>
+  <div class="form-group">
+    <label class="col-xs-4">First Name</label>
+    {{input type="text" value=firstName class="col-xs-6"}}
+  </div>
+  <div class="form-group">
+    <label class="col-xs-4">Last Name</label>
+    {{input type="text" value=lastName class="col-xs-6"}}
+  </div>
+  <div class="form-group">
+    <label class="col-xs-4">Description</label>
+    {{textarea value=descrip  class="col-xs-6" rows="6"}}
   </div>
   <a {{action 'authenticateGoogle'}} class="col-xs-6 btn btn-social btn-google">{{fa-icon "fa-google-plus"}} Sign in with Google</a>
   <a {{action 'authenticateFacebook'}} class="col-xs-6 btn btn-social btn-facebook">{{fa-icon "fa-facebook-square"}} Sign in with Facebook</a>

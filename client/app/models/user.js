@@ -6,9 +6,7 @@ export default DS.Model.extend({
   lastName:DS.attr(),
   descrip:DS.attr(),
   photo:DS.attr(),
-  Teams:DS.hasMany('team'),
-  email:DS.attr(),
-  missions:DS.hasMany('mission')
-
+  Teams:DS.hasMany('team',{async:true}),
+  email:DS.attr()
 
 });

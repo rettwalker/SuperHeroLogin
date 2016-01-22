@@ -5,13 +5,34 @@ export default Ember.Component.extend({
 
 
   actions: {
-    authenticate: function() {
+    registerUser(){
+      var _this = this;
+      var information = {
+        email:this.identification,
+        password:this.password,
+        name:this.name,
+        firstName:this.firstName,
+        lastName:this.lastName,
+        descrip:this.descrip
+      };
       var credentials = this.getProperties('identification', 'password'),
         authenticator = 'authenticator:jwt';
-        var _this = this;
-      this.get('session').authenticate(authenticator, credentials).then(function(){
-        _this.transitionToRoute('/profile');
-      });
+      Ember.$.ajax({
+        url: 'http://localhost:1337/api/v1/auths/register',
+        data: information,
+        dataType: 'json',
+        success: function(response) {
+          if(response.message==='200'){
+            _this.get('session').authenticate(authenticator, credentials).catch((reason) => {
+              console.log(reason.error);
+            });
+          }else if (response.message==='400'){
+            console.log('an unknown error has occured, please try again');
+          }
+        },
+        error: function(response){
+          console.log(response);
+      }});
     },
     authenticateGoogle(){
       var _this = this;

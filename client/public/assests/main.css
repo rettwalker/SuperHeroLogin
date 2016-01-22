@@ -1,5 +1,5 @@
-.navbar-default {
-  background-color:teal;
-  background-image: none;
-  background-repeat: no-repeat;
- }
+.dropArea{
+  height:100px;
+  width:100px;
+  background-color: blue;
+}

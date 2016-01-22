@@ -50,14 +50,14 @@ module.exports.waterlock = {
     },
     {
       name: 'waterlock-google-auth',
-      clientId: '...',
-      clientSecret: '...',
+      clientId: '1018893069234-vug1fnnachiigll0qsgkb8u58cng81qh.apps.googleusercontent.com',
+      clientSecret: 'TBivE6i8y5cfcRDU5Cd9yMQ0',
       redirectUri: 'http://localhost:4200/login'
     },
     {
         name: "waterlock-facebook-auth",
-        appId: "...",
-        appSecret: "..."
+        appId: "558288270991407",
+        appSecret: "267a0ad4106953b6979b85e9a2d7413a"
 
     }
   ],
@@ -73,7 +73,7 @@ module.exports.waterlock = {
     secret: 'this is my secret',
     expiry:{
       unit: 'days',
-      length: '10'
+      length: '7'
     },
     audience: 'user',
     subject: 'subject',

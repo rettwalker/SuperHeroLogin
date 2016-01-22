@@ -7,7 +7,7 @@ module.exports = function(environment) {
     'script-src': "'self' connect.facebook.net graph.facebook.com",
     'font-src': "'self'",
     'connect-src': "'self' *",
-    'img-src': "'self' www.facebook.com",
+    'img-src': "'self' data: www.facebook.com",
     'style-src': "'self' 'unsafe-inline' *",
     'media-src': "'self'",
     'frame-src': "'self' staticxx.facebook.com www.facebook.com"
@@ -20,11 +20,11 @@ module.exports = function(environment) {
 			sessionServiceName: 'session',
 			providers: {
 				'google-oauth2': {
-					apiKey: '...',
+					apiKey: '1018893069234-vug1fnnachiigll0qsgkb8u58cng81qh.apps.googleusercontent.com',
 					redirectUri: 'http://localhost:4200/login'
 				},
 				'facebook-oauth2': {
-					apiKey: '...',
+					apiKey: '558288270991407',
 				},
         'twitter':{
           requestTokenUri: '/auth/twitter'
