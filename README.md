@@ -10,3 +10,9 @@
   - Finished with using ember-uploader in an action that sent the file to Sails backend
   - images are then pulled from Sails to display as user profile pictures to keep the frontend size lower
   - currently clicking save on profile reverts the saved img to older picture location "need to fix"
+
+#Need to do
+- Fix facebook auth
+- issue with save button and photolink
+- transition profile to a component instead of controller
+- maybe work on layout and design
