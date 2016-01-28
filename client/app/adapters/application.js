@@ -6,10 +6,11 @@ import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 
 export default DS.RESTAdapter.extend(DataAdapterMixin,{
   authorizer: 'authorizer:token',
+
   /**
    * The host of your API
    */
-  host:                 'http://127.0.0.1:1337',
+  host:                 'http://localhost:1337',
   /**
    * The namespace of your API
    */

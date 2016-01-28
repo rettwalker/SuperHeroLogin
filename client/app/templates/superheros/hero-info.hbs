@@ -1,7 +1,11 @@
 
   <div class="row">
     <div class="col-xs-12 col-sm-4">
-      <img src="/assests/images/userPlaceholder.png" class="img-responsive center-block" alt="Responsive image">
+      {{#if model.photo}}
+        <img src="http://localhost:1337{{model.photo}}" class="img-responsive center-block" alt="Responsive image">
+        {{else}}
+        <img src="/assests/images/userPlaceholder.png" class="img-responsive center-block" alt="Responsive image">
+      {{/if}}
     </div>
     <div class="col-xs-12 col-sm-4 text-center">
 

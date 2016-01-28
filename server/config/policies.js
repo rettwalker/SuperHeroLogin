@@ -39,7 +39,9 @@ module.exports.policies = {
     login:['checkHeader','userExists']
   },
   UserController:{
-    update:'hasJsonWebToken'
+
+    update:['checkHeader','hasJsonWebToken'],
+    uploadImage:['checkHeader','hasJsonWebToken']
   }
 	// RabbitController: {
 

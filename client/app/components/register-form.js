@@ -7,14 +7,7 @@ export default Ember.Component.extend({
   actions: {
     registerUser(){
       var _this = this;
-      var information = {
-        email:this.identification,
-        password:this.password,
-        name:this.name,
-        firstName:this.firstName,
-        lastName:this.lastName,
-        descrip:this.descrip
-      };
+      var information = this.getProperties('identification','password','name','firstName','lastName','descrip');
       var credentials = this.getProperties('identification', 'password'),
         authenticator = 'authenticator:jwt';
       Ember.$.ajax({

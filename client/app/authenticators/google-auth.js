@@ -37,23 +37,8 @@ export default ToriiAuthenticator.extend({
                   },
                   error: Ember.run.bind(null, reject)
                 });
-              }else if(provider === 'facebook-oauth2'){
-                console.log(provider);
-                console.log(authorizationCode);
-                Ember.$.ajax({
-                  url: 'http://localhost:1337/api/v1/auths/facebook_oauth2',
-                  data: { 'code': authorizationCode },
-                  dataType: 'json',
-                  success: function(stAuthResponse) {
-                    console.log(stAuthResponse);
-                    Ember.merge(authResponse, stAuthResponse);
-                    _this._resolveWith(provider, authResponse, resolve);
-                  },
-                  error: Ember.run.bind(null, reject)
-                });
               }
 						});
-
 					});
 			});
   },

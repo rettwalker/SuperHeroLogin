@@ -7,7 +7,7 @@ module.exports = function(environment) {
     'script-src': "'self' connect.facebook.net graph.facebook.com",
     'font-src': "'self'",
     'connect-src': "'self' *",
-    'img-src': "'self' data: www.facebook.com",
+    'img-src': "'self' data: www.facebook.com http://localhost:1337",
     'style-src': "'self' 'unsafe-inline' *",
     'media-src': "'self'",
     'frame-src': "'self' staticxx.facebook.com www.facebook.com"
