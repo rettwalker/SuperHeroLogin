@@ -20,11 +20,11 @@ module.exports = function(environment) {
 			sessionServiceName: 'session',
 			providers: {
 				'google-oauth2': {
-					apiKey: '1018893069234-vug1fnnachiigll0qsgkb8u58cng81qh.apps.googleusercontent.com',
+					apiKey: '...',
 					redirectUri: 'http://localhost:4200/login'
 				},
 				'facebook-oauth2': {
-					apiKey: '558288270991407',
+					apiKey: '...',
 				},
         'twitter':{
           requestTokenUri: '/auth/twitter'
