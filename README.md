@@ -16,5 +16,4 @@
 - issue with save button and photolink
 - maybe work on layout and design
 - fix issue with team addition.
-  - Not always auto uploading teams a person is affliated with on profile edit page.
-  - It is also removing other members from the team
+  - Might be working now but still buggy

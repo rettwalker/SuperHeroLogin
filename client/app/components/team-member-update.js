@@ -13,7 +13,7 @@ export default Ember.Component.extend({
       user.get('Teams').pushObject(team);
       user.save();
 
-      team.save();
+      //team.save();
 
       alert("New Team Added");
     },
@@ -25,7 +25,7 @@ export default Ember.Component.extend({
       user.get('Teams').removeObject(team);
       user.save();
 
-      team.save();
+      //team.save();
 
       alert("Team Removed");
     },
