@@ -1,6 +1,19 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-5">
+    <div class="dropdown col-xs-12">
+      <button class="visible-xs btn-block btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Select A Team
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu col-xs-12" aria-labelledby="dropdownMenu1">
+        {{#each model as |user|}}
+          <p>{{#link-to 'teams.team-info' team.id}}{{team.name}}{{/link-to}}</p>
+        {{else}}
+          No Teams in Database
+        {{/each}}
+      </ul>
+    </div>
+    <div class="hidden-xs col-sm-5">
       {{#each model as |team|}}
       <p>{{#link-to 'teams.team-info' team.id}}{{team.name}}{{/link-to}}</p>
       {{else}}

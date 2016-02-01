@@ -1,0 +1,7 @@
+<p>{{name}}
+  {{#if memberOf}}
+    <button {{action "removeTeam" id}} class="btn btn-danger">Remove Team</button>
+  {{else}}
+    <button {{action "addTeam" id}} class="btn btn-info">Add Team</button>
+  {{/if}}
+</p>

@@ -14,5 +14,7 @@
 #Need to do
 - Fix facebook auth
 - issue with save button and photolink
-- transition profile to a component instead of controller
 - maybe work on layout and design
+- fix issue with team addition.
+  - Not always auto uploading teams a person is affliated with on profile edit page.
+  - It is also removing other members from the team

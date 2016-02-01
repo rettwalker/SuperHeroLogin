@@ -1,0 +1,31 @@
+<form {{action "addNewHero" on="submit"}} class="form-horizontal">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-group">
+        <label class="col-xs-4">Secret Identity</label>
+
+          {{input type="text" value=name placeholder=name class="col-xs-6"}}
+
+      </div>
+      <div class="form-group">
+        <label class="col-xs-4">First Name</label>
+
+          {{input type="text" value=firstName placeholder=firstName class="col-xs-6"}}
+
+      </div>
+      <div class="form-group">
+        <label class="col-xs-4">Last Name</label>
+
+          {{input type="text" value=lastName placeholder=lastName class="col-xs-6"}}
+
+      </div>
+      <div class="form-group">
+        <label class="col-xs-4">Description</label>
+
+        {{textarea value=descrip cols="40" placeholder=descrip class="col-xs-8" rows="6"}}
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary " type="submit">Save</button>
+  <button type="button" class="btn btn-info" data-toggle="modal" data-target=".image-upload">Upload Image</button>
+</form>
