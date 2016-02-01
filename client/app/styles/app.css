@@ -30,3 +30,8 @@
 .navbar-default .navbar-brand {
     color: white;
 }
+@media (max-width: 767px){
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: white;
+  }
+}
